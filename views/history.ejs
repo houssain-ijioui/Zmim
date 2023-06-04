@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>History</title>
+    
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Zmim</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav"> 
+            <li class="nav-item">
+              <a class="nav-link" href="/history">History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/profiles">Profiles</a>
+              </li>
+          </ul>
+        </div>
+    </nav>
+
+    <h1>History</h1>
+    <br>
+    <br>
+
+    <form style="display: flex; flex-direction: row;" action="/filter" method="post">
+        <h2 class="h2">Filter by Name:</h2>
+
+        <div class="form-group">
+            <select style="width: 200px;" class="form-control" name="name">
+                <option selected hidden disabled>Choose Name</option>
+                <option value="Houssain">Houssain</option>
+                <option value="Yassin">Yassin</option>
+                <option value="Abdellatif">Abdellatif</option>
+                <option value="Youssef">Youssef</option>
+                <option value="Aymane">Aymane</option>
+                <option value="Jamal">Jamal</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+
+    <br>
+    <br>
+
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-lg-8 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">History</h4>
+                            <p class="card-description">Quibusdam quidendae ex laudantium architecto.</p>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Day</th>
+                                            <th>Lunch</th>
+                                            <th>Lunch People</th>
+                                            <th>Dinner</th>
+                                            <th>Dinner People</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <% tours.forEach(tour => { %>
+                                          <tr>
+                                            <td><%= tour.name %></td>
+                                            <td><%= tour.day %></td>
+                                            <td><%= tour.lunch %></td>
+                                            <td><%= tour.lunch_people %></td>
+                                            <td><%= tour.dinner %></td>
+                                            <td><%= tour.dinner_people %></td>
+                                            <td><%= tour.day %>/<%= tour.createdAt.toDateString() %></td>
+                                          </tr>
+                                      <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>
