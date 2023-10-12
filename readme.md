@@ -1,0 +1,1 @@
+Zmim is an Expense Tracker & Meal Schedule App designed to help university students manage their expenses and meal planning effectively. It simplifies the process of tracking expenses and meal schedules. This project is built using Node.js for server side logic, Bootstrap, and MongoDB for a seamless and user-friendly experience.
